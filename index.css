@@ -51,15 +51,14 @@ input[type="submit"]:hover {
     background-color: #0056b3;
 }
 
-/* Centering container */
 .buttons {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full viewport height */
+    height: 100vh;
 }
 
-/* Base button styles */
+
 button {
     padding: 12px 24px;
     margin: 20px;
@@ -69,19 +68,19 @@ button {
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
-    background-color: #104a12; /* Green */
+    background-color: #104a12; 
     color: #fff;
     text-transform: uppercase;
 }
 
-/* Button hover effect */
+
 button:hover {
-    background-color: #45a049; /* Darker shade of green */
+    background-color: #45a049; 
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Adjusting margins for buttons */
+
 #signup {
-    margin-right: 20px;
+    margin-right: 22px;
 }
