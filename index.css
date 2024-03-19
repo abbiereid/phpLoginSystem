@@ -5,7 +5,11 @@ body {
     background-color: #f2f2f2;
 }
 
-#login-form {
+.hidden {
+    display: none;
+}
+
+#login-form, #register-form {
     width: 300px;
     margin: 50px auto;
     background-color: #fff;
@@ -45,4 +49,39 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
     background-color: #0056b3;
+}
+
+/* Centering container */
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+}
+
+/* Base button styles */
+button {
+    padding: 12px 24px;
+    margin: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #104a12; /* Green */
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #45a049; /* Darker shade of green */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Adjusting margins for buttons */
+#signup {
+    margin-right: 20px;
 }

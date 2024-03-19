@@ -8,7 +8,13 @@
     </head>
 
     <body>
-        <div id="login-form">
+
+        <div class="buttons">
+        <button id="login">Login</button>
+        <button id="signup">SignUp</button>
+        </div>
+
+        <div id="login-form" class="hidden">
             <h2>Login</h2>
             <form name="login" method="POST" action="login.php">
                 <label>Username: </label>
@@ -18,5 +24,22 @@
                 <input type="submit">
             </form>
         </div>
+
+        <div id="register-form" class="hidden">
+            <h2>Register</h2>
+            <form name="register" method="POST" action="register.php">
+                <label>Email: </label>
+                <input type="text" id="email" name="email" required><br><br>
+                <label>Username: </label>
+                <input type="username" id="regusername" name="username" required><br><br>
+                <label>Password: </label>
+                <input type="password" id="regpassword" name="password" required><br><br>
+                <label>Date of Birth: </label>
+                <input type="date" id="dob" name="dob" required><br><br>
+                <input type="submit">
+            </form>
+        </div>
+
+        <script src="index.js"></script>
     </body>
 </html>
