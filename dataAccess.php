@@ -17,19 +17,21 @@
     $response = array();
 
     if ($result->num_rows > 0) {
-        $userRow = $result->fetch_assoc();
-        $name = $userRow['name'];
-        $link = $userRow['link'];
+        while ($userRow = $result->fetch_assoc()) {
+            $name = $userRow['name'];
+            $link = $userRow['link'];
 
-        $response['name'] = $name;
-        $response['link'] = $link;
+            $response[] = array(
+                'name' => $name,
+                'link' => $link
+            );
+        }
     } else {
         $response['message'] = 'There was a problem fetching your data.';
     }
 
     $stmt->close();
     $conn->close();
-
 
     header('Content-Type: application/json');
     echo json_encode($response);

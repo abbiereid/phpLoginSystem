@@ -63,13 +63,27 @@ function add(username) {
 }
 
 function view(username) {
+    const formData = new FormData();
+    formData.append('username', username);
+
     fetch('dataAccess.php', {
         method: 'POST',
         body: formData
     }) 
     .then(response => response.json())
     .then(data => {
-        console.log(data);
+        data.forEach(element => {
+            const name = document.createElement('h2');
+            name.textContent = element.name;
+            
+            const link = document.createElement('a');
+            link.href = element.link;
+            link.textContent = element.link;
+            
+            document.body.appendChild(name);
+            document.body.appendChild(link);
+        });
     })
-    .catch(error => {console.log(error)} );
+    .catch(error => {console.log(error)});
 }
+
