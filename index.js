@@ -33,6 +33,12 @@ function authentication(event) {
     .then(response => response.json())
     .then(data => {
         console.log(data);
+        if (data.success) {
+            const loggedin = document.querySelector('#loggedIn')
+            loggedin.classList.toggle('hidden');
+            const loggedout = document.querySelector('#loggedOut')
+            loggedout.classList.toggle('hidden');
+        }
     })
     .catch(error => {console.log(error)} );
 }
