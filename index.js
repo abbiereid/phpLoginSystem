@@ -1,4 +1,5 @@
 window.addEventListener('load', () => {
+    let formData;
     
     const login = document.querySelector("#login");
     const signup = document.querySelector("#signup");
@@ -24,7 +25,7 @@ window.addEventListener('load', () => {
 function authentication(event) {
     event.preventDefault();
 
-    const formData = new FormData(document.forms["login"]);
+    formData = new FormData(document.forms["login"]);
 
     fetch('login.php', {
         method: 'POST',
@@ -64,7 +65,7 @@ function add(username) {
 function view(username) {
     fetch('dataAccess.php', {
         method: 'POST',
-        body: username
+        body: formData
     }) 
     .then(response => response.json())
     .then(data => {

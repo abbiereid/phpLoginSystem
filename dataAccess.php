@@ -24,7 +24,7 @@
         $response['name'] = $name;
         $response['link'] = $link;
     } else {
-        $response['message'] = 'There was a problem fetching your data.'
+        $response['message'] = 'There was a problem fetching your data.';
     }
 
     $stmt->close();
