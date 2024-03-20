@@ -38,9 +38,35 @@ function authentication(event) {
             loggedin.classList.toggle('hidden');
             const loggedout = document.querySelector('#loggedOut')
             loggedout.classList.toggle('hidden');
+
+            logOut = document.querySelector('#signout');
+            logOut.addEventListener('click', () => {
+                loggedin.classList.toggle('hidden');
+                loggedout.classList.toggle('hidden');
+            });
+
+            addData = document.querySelector('#add');
+            addData.addEventListener('click', add(data.username));
+
+            viewData = document.querySelector('#view');
+            viewData.addEventListener('click', view());
+
         }
     })
     .catch(error => {console.log(error)} );
 }
 
+function add(username) {
+    fetch('addData.php', {
+        method: 'POST',
+        body: username
+    }) 
 
+}
+
+function view(username) {
+    fetch('dataAccess.php', {
+        method: 'POST',
+        body: username
+    }) 
+}
