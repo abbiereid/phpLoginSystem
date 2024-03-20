@@ -1,15 +1,20 @@
 window.addEventListener('load', () => {
     
     const login = document.querySelector("#login");
+    const signup = document.querySelector("#signup");
+    const loginForm = document.querySelector("#login-form");
+    const regForm = document.querySelector("#register-form");
+
+
     login.addEventListener('click', () => {
-        const loginForm = document.querySelector("#login-form");
         loginForm.classList.toggle('hidden');
+        regForm.classList.add('hidden');
     });
 
-    const signup = document.querySelector("#signup");
+   
     signup.addEventListener('click', () => {
-        const regForm = document.querySelector("#register-form");
         regForm.classList.toggle('hidden');
+        loginForm.classList.add('hidden');
     });
 
 });
