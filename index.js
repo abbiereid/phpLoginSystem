@@ -58,17 +58,13 @@ function authentication(event) {
 }
 
 function add(username) {
-    fetch('addData.php', {
-        method: 'POST',
-        body: username
-    }) 
-
+    console.log('add');
 }
 
 function view(username) {
     fetch('dataAccess.php', {
         method: 'POST',
-        body: JSON.stringify({ username: username })
+        body: username
     }) 
     .then(response => response.json())
     .then(data => {
