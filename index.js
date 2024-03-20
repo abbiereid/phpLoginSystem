@@ -45,11 +45,12 @@ function authentication(event) {
                 loggedout.classList.toggle('hidden');
             });
 
+            console.log(data.username);
             addData = document.querySelector('#add');
             addData.addEventListener('click', add(data.username));
 
             viewData = document.querySelector('#view');
-            viewData.addEventListener('click', view());
+            viewData.addEventListener('click', view(data.username));
 
         }
     })
@@ -67,7 +68,7 @@ function add(username) {
 function view(username) {
     fetch('dataAccess.php', {
         method: 'POST',
-        body: username
+        body: JSON.stringify({ username: username })
     }) 
     .then(response => response.json())
     .then(data => {

@@ -10,13 +10,17 @@
 
     $sql = "SELECT * FROM `userlinks` WHERE `user` = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ss", $username);
+    $stmt->bind_param("s", $username);
     $stmt->execute();
     $result = $stmt->get_result();
 
     $response = array();
 
     if ($result->num_rows > 0) {
+        $userRow = $result->fetch_assoc();
+        $name = $userRow['name'];
+        $link = $userRow['link'];
+
         $response['name'] = $name;
         $response['link'] = $link;
     } else {
