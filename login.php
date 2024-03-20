@@ -16,10 +16,19 @@
     $stmt->execute();
     $result = $stmt->get_result();
 
-    if ($result->num_rows > 0) {
-        echo "logged in";
+    if (!($result->num_rows > 0)) {
+        echo "
+            <div class='popup'>
+                <h2>This user does not exist, or the password you have entered is incorrect</h2>
+                <button class='back'>Back</button>
+            </div>
+        ";
     } else {
-        echo "user doesn't exist or password is incorrect";
+        $userRow = $result->fetch_assoc(); // Fetch user details
+        $dob = $userRow['DOB']; // Fetch DOB from the user details
+        echo "
+            Welcome $username, I see it is your birthday on the $dob
+        ";
     }
 
     $stmt->close();
