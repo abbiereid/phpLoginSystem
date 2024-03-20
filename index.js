@@ -17,4 +17,24 @@ window.addEventListener('load', () => {
         loginForm.classList.add('hidden');
     });
 
+    loginForm.addEventListener('submit', event => authentication(event));
+
 });
+
+function authentication(event) {
+    event.preventDefault();
+
+    const formData = new FormData(document.forms["login"]);
+
+    fetch('login.php', {
+        method: 'POST',
+        body: formData
+    }) 
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => {console.log(error)} );
+}
+
+
