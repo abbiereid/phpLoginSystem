@@ -69,4 +69,9 @@ function view(username) {
         method: 'POST',
         body: username
     }) 
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => {console.log(error)} );
 }
