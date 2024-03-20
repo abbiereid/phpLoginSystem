@@ -17,14 +17,17 @@
     $response = array();
 
     if ($result->num_rows > 0) {
-
-        
-
         $response['name'] = $name;
         $response['link'] = $link;
-
-
-
+    } else {
+        $response['message'] = 'There was a problem fetching your data.'
     }
+
+    $stmt->close();
+    $conn->close();
+
+
+    header('Content-Type: application/json');
+    echo json_encode($response);
 
 ?>
